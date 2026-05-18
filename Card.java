@@ -66,6 +66,10 @@ public class Card {
 	/**
 	 * Default constructor, builds default card object as: A ♥
 	 */
+	public Card() {
+        this.value = DEFAULT_VALUE;
+        this.suit = DEFAULT_SUIT;
+    }
 
 
 	/**
@@ -77,6 +81,12 @@ public class Card {
 	 * @param suit  one of four suit values (unicode value for heart, diamond,
 	 *              spade, or club)
 	 */
+	public Card(int value, char suit){
+		if (!setAll(value, suit)) {
+			System.out.println("Invalid value or suit given to constructor, program is now shutting down.");
+			System.exit(0);
+		}
+	}
 
 
 	/**
@@ -85,6 +95,14 @@ public class Card {
 	 *
 	 * @param original Card object to be copied
 	 */
+	public Card(Card original) {
+        if (original == null) {
+            System.out.println("ERROR: Cannot copy a null Card object. Shutting down.");
+            System.exit(0);
+        }
+        this.value = original.value;
+        this.suit = original.suit;
+    }
 
 
 	/*** MUTATOR METHODS (SETTERS) ***/
@@ -205,9 +223,10 @@ public class Card {
 	 * 
 	 * @return String containing (print) value and suit, separated by a space
 	 */
-	public String toString() {
-		return this.value + " " + this.suit;
-	}
+	@Override
+    public String toString() {
+        return getPrintValue() + " " + this.suit;
+    }
 
 	/**
 	 * Checking for equality of Card objects, all instance variables exactly equal
@@ -218,6 +237,12 @@ public class Card {
 	 * @return boolean representing equality between both objects, all data is
 	 *         exactly equal to each other
 	 */
+	public boolean equals(Card otherCard) {
+        if (otherCard == null) {
+            return false;
+        }
+        return this.value == otherCard.value && this.suit == otherCard.suit;
+    }
 
 
 	/*** EXTRA METHODS ***/
