@@ -49,11 +49,11 @@ public class CardTester {
 	
 	public static void main(String[] args) {
 		//NOTE: Comment all method calls out and uncomment one at a time as you pass tests!
-
+		
 		CardTester.testToString();
-
+		
 		CardTester.testSetValue();
-
+		/*
 		CardTester.testSetSuit();
 		
 		CardTester.testSetAll();
@@ -74,12 +74,13 @@ public class CardTester {
 		CardTester.testEquals();
 
 		// - test getPrintCard() and printCard() //use driver in Main
+		*/
 	}
 
 
 	/*** TESTER HELPER METHODS ***/
 	//NOTE: Comment all out method definitions and uncomment one at a time as you pass tests!
-
+	
 	public static void testToString() {
 		Card test = new Card();
 		System.out.println("\n==============================================");
@@ -89,7 +90,7 @@ public class CardTester {
 			+ test.toString() + "]. Know why?");
 		System.out.println("Otherwise, the above should show the default value of: A " + Card.DEFAULT_SUIT);
 	}
-
+	
 	public static void testSetValue() {
 		boolean setterTest;
 		Card test = new Card();
@@ -119,7 +120,7 @@ public class CardTester {
 		setterTest = test.setValue(14);
 		System.out.println("setValue should NOT have changed value from K: " + test + ". Setter returned " + setterTest);
 	}
-
+	/*
 	public static void testSetSuit() {
 		boolean setterTest;
 		Card test = new Card();
@@ -291,5 +292,5 @@ public class CardTester {
 		System.out.println("Testing both instance variables match:");
 		System.out.println("Are card " + original + " and card " + test + " the same? " + original.equals(test));
 	}
-
+	*/
 }
