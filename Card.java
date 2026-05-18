@@ -214,6 +214,20 @@ public class Card {
 	 *
 	 * @return String containing ASCII art with card suit and card print value
 	 */
+	public String getPrintCard() {
+        String pValue = getPrintValue();
+        // Dynamic formatting trick to keep widths equal whether it's 1 character ("A") or 2 characters ("10")
+        String topSpacing = pValue.equals("10") ? "" : " ";
+        String bottomSpacing = pValue.equals("10") ? "" : " ";
+        
+        return "┌─────────┐\n" +
+               "│ " + pValue + topSpacing + "      │\n" +
+               "│         │\n" +
+               "│    " + this.suit + "    │\n" +
+               "│         │\n" +
+               "│       " + bottomSpacing + pValue + " │\n" +
+               "└─────────┘";
+    }
 
 
 	/*** OTHER REQUIRED METHODS ***/
@@ -249,7 +263,7 @@ public class Card {
 	/**
 	 * Prints card ASCII art to console (see {@link #getPrintCard()})
 	 */
-
-
-
+	public void printCard() {
+        System.out.println(getPrintCard());
+    }
 }

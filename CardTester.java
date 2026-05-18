@@ -53,7 +53,6 @@ public class CardTester {
 		CardTester.testToString();
 		
 		CardTester.testSetValue();
-		/*
 		CardTester.testSetSuit();
 		
 		CardTester.testSetAll();
@@ -74,7 +73,6 @@ public class CardTester {
 		CardTester.testEquals();
 
 		// - test getPrintCard() and printCard() //use driver in Main
-		*/
 	}
 
 
@@ -120,7 +118,7 @@ public class CardTester {
 		setterTest = test.setValue(14);
 		System.out.println("setValue should NOT have changed value from K: " + test + ". Setter returned " + setterTest);
 	}
-	/*
+
 	public static void testSetSuit() {
 		boolean setterTest;
 		Card test = new Card();
@@ -292,5 +290,5 @@ public class CardTester {
 		System.out.println("Testing both instance variables match:");
 		System.out.println("Are card " + original + " and card " + test + " the same? " + original.equals(test));
 	}
-	*/
+
 }
