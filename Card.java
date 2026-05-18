@@ -15,7 +15,7 @@
  * - Whenever value/suit is changed, it must be within the valid values
  *
  * @author Rohith Mekala
- * @version ???
+ * @version 1.0
  */
 
 /*
